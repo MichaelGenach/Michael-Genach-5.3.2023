@@ -25,7 +25,7 @@ export default function Home(props) {
 
     useEffect(() => {
     try {
-        axios.get(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=kAlHsYIZLTTpj53ldyPvKgKy45JN3ccy&q=${props.cityName}`)
+        axios.get(`https://dataservice.accuweather.com/locations/v1/cities/search?apikey=kAlHsYIZLTTpj53ldyPvKgKy45JN3ccy&q=${props.cityName}`)
             .then((response) => {
 
                 // props.setCityName(response.data[0].EnglishName)
@@ -44,7 +44,7 @@ export default function Home(props) {
 
     useEffect(() => {
         try {
-            axios.get(`http://dataservice.accuweather.com/currentconditions/v1/${cityKey}?apikey=kAlHsYIZLTTpj53ldyPvKgKy45JN3ccy`)
+            axios.get(`https://dataservice.accuweather.com/currentconditions/v1/${cityKey}?apikey=kAlHsYIZLTTpj53ldyPvKgKy45JN3ccy`)
                 .then((response) => {
                     setCloudFore(response.data[0].WeatherText)
                     props.setCityCurrent(response.data[0].Temperature.Metric.Value)
@@ -56,7 +56,7 @@ export default function Home(props) {
 
         try {
 
-            axios.get(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityKey}?apikey=kAlHsYIZLTTpj53ldyPvKgKy45JN3ccy`)
+            axios.get(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityKey}?apikey=kAlHsYIZLTTpj53ldyPvKgKy45JN3ccy`)
                 .then((response) => {
 
                     // DailyForecastsArr = response.data.DailyForecasts
@@ -79,7 +79,7 @@ export default function Home(props) {
 
     useEffect(() => {
         try {
-            axios.get(`http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=kAlHsYIZLTTpj53ldyPvKgKy45JN3ccy&q=${props.cityName}`)
+            axios.get(`https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=kAlHsYIZLTTpj53ldyPvKgKy45JN3ccy&q=${props.cityName}`)
                 .then((response) => {
 
 
